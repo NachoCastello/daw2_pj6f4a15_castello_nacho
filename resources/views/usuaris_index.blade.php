@@ -61,7 +61,10 @@
                         </tbody>
                     </table>
                 </div>
-		<a href="{{ route('usuaris.pdf.llista') }}" class="btn btn-danger btn-sm">
+		<a href="{{ route('usuaris.pdf.llista') }}" 
+               class="btn btn-danger" 
+       style="font-weight: bold; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; background-color: #dc3545; color: white; border: none;">
+
 		    GENERAR PDF USUARIS
 		</a>
             </div>

@@ -8,7 +8,6 @@
 
 
 @section('content')
-<h1>Dades del professor (Vista Bàsica)</h1>
 <div class="mt-5">
 	<table class="table table-striped table-bordered table-hover">
 		<thead class="thead-dark">
@@ -40,17 +39,33 @@
 			</tr> 
 		</tbody> 
 	</table>
-	<div class="p-6 bg-white border-b border-gray-200">
-		<a href="{{ url('dashboard-basic') }}">Torna al dashboard</a> 
-	</div> 
 
-<div style="margin-top: 20px;">
-    <a href="{{ route('profes.pdf.detall', $dades_professors->id) }}" 
-       class="btn btn-danger" 
-       style="font-weight: bold; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; background-color: #dc3545; color: white; border: none;">
-        GENERAR PDF DE LA FITXA
-    </a>
-</div>
+		<div style="padding: 20px 32px; display: flex; align-items: center; gap: 12px; border-top: 1px solid #e5e7eb; background-color: #f9fafb;">
+		    
+		    <a href="{{ url('dashboard-basic') }}" 
+		       style="color: #6b7280; padding: 10px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px; border: 1px solid #d1d5db; margin-right: auto;">
+		        Torna al dashboard
+		    </a>
+
+		    @if(Auth::user()->role === 'gestor')
+		        <a href="{{ route('profes.edit', $dades_professors->id) }}" 
+		           style="background-color: #4f46e5; color: white; padding: 10px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px;">
+		            MODIFICAR
+		        </a>
+		    @endif
+
+		    <a href="{{ route('profes.index_basic') }}" 
+		       style="color: #374151; padding: 10px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 14px; border: 1px solid #d1d5db; background-color: white;">
+		        TORNAR
+		    </a>
+
+            <a href="{{ route('profes.pdf.detall', $dades_professors->id) }}" 
+            class="btn btn-danger" 
+            style="font-weight: bold; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; background-color: #dc3545; color: white; border: none;">
+                GENERAR PDF DE LA FITXA
+            </a>
+
+		</div>
 
 </div>
 @endsection

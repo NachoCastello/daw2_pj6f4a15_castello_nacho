@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsuarisAmbRolsSeeder::class,
             ProfessorSeeder::class,
-	   ProfessorRandom::class,
+	        ProfessorRandom::class,
         ]);
     }
 }

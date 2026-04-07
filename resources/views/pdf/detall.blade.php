@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <title>Fitxa Professor - {{ $dades_professor->nombre }}</title>
+    <title>Fitxa Professor - {{ $dades_professors->nombre }}</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; color: #333; }
         .header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #4f46e5; padding-bottom: 10px; }
@@ -22,47 +22,47 @@
         <tbody>
             <tr>
                 <td class="font-weight-bold">ID</td>
-                <td>{{ $dades_professor->id }}</td>
+                <td>{{ $dades_professors->id }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Nom</td>
-                <td>{{ $dades_professor->nombre }}</td>
+                <td>{{ $dades_professors->nombre }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Cognoms</td>
-                <td>{{ $dades_professor->apellidos }}</td>
+                <td>{{ $dades_professors->apellidos }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">NIF / CIF</td>
-                <td>{{ $dades_professor->nif_cif }}</td>
+                <td>{{ $dades_professors->nif_cif }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Correu Electrònic</td>
-                <td>{{ $dades_professor->email }}</td>
+                <td>{{ $dades_professors->email }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Telèfon</td>
-                <td>{{ $dades_professor->telefono ?? 'N/A' }}</td>
+                <td>{{ $dades_professors->telefono ?? 'N/A' }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Especialitat</td>
-                <td>{{ $dades_professor->especialidad }}</td>
+                <td>{{ $dades_professors->especialidad }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Categoria professional</td>
-                <td>{{ $dades_professor->categoria_profesional }}</td>
+                <td>{{ $dades_professors->categoria_profesional }}</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Experiència</td>
-                <td>{{ $dades_professor->anyos_experiencia }} anys</td>
+                <td>{{ $dades_professors->anyos_experiencia }} anys</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Sou Anual</td>
-                <td>{{ number_format($dades_professor->sueldo, 2, ',', '.') }} €</td>
+                <td>{{ number_format($dades_professors->sueldo, 2, ',', '.') }} €</td>
             </tr>
             <tr>
                 <td class="font-weight-bold">Data de naixement</td>
-                <td>{{ \Carbon\Carbon::parse($dades_professor->fecha_nacimiento)->format('d/m/Y') }}</td>
+                <td>{{ \Carbon\Carbon::parse($dades_professors->fecha_nacimiento)->format('d/m/Y') }}</td>
             </tr>
         </tbody>
     </table>

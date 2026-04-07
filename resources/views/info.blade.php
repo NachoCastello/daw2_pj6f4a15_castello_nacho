@@ -13,11 +13,14 @@
         </header>
         <p>Pàgina informativa de l'aplicació web Empresa</p>
         <p>
-        Aquesta aplicació té 2 tipus d'usuaris:
+        En la pagina hay dos tipos de Usuarios:
         <ol>
-            <li>Administrador: crea/modifica/esborra/visualitza treballadors</li>
-            <li>Basic: visualitzar treballadors</li>
+            <li>Gestor: crea/modifica/elimina/lista trabajaroes y crea/elimina/lista usuarios</li>
+            <li>Consultor: lista treballadors</li>
         </ol>
+        <br>
+        Un gestor tambien puede generar pdfs de un trabajador y de los usuarios, El Consultor solamente puede generar un Pdf del trabajador.
+        <br><br>
         <a href="{{ url('/') }}">Inici</a><br>
         </p>
     </body>

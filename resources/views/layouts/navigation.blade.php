@@ -9,10 +9,6 @@
 		        </a>
 		    </div>
 
-		    <div class="ms-4 flex items-center text-sm font-bold uppercase text-gray-600">
-		        Rol: {{ Auth::user()->role }}
-		    </div>
-
 			@if(Auth::user()->role == 'gestor')
 			    <x-nav-link :href="route('usuaris.index')" :active="request()->routeIs('usuaris.index')">
 			        {{ __('Gestió Usuaris') }}
@@ -36,7 +32,9 @@
 		        @endif
 		    </div>
 		</div>
-
+		    <div class="ms-4 flex items-center text-sm font-bold uppercase text-gray-600">
+		        Rol: {{ Auth::user()->role }}
+		    </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">

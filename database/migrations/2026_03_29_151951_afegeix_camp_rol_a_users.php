@@ -12,7 +12,6 @@ return new class extends Migration
 	public function up(): void
 	{
 	    Schema::table('users', function (Blueprint $table) {
-	        // Canviem el default a 'consultor' perquè és el rol amb menys permisos
 	        $table->string('role')->after('name')->default('consultor');
 	    });
 	}

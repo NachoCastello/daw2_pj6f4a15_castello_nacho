@@ -67,18 +67,12 @@ class ControladorProfessor extends Controller
         return redirect()->route('profes.index')->with('success', 'Dades actualitzades correctament.');
     }
 
-    /**
-     * GESTOR: Veure fitxa completa (mostra.blade.php)
-     */
     public function show($id)
     {
         $dades_professors = Professor::findOrFail($id);
         return view('mostra', compact('dades_professors'));
     }
 
-    /**
-     * GESTOR: Eliminar registre
-     */
     public function destroy($id)
     {
         if (Auth::user()->role !== 'gestor') return redirect()->route('dashboard-basic');
@@ -89,11 +83,8 @@ class ControladorProfessor extends Controller
         return redirect()->route('profes.index')->with('success', 'Professor eliminat.');
     }
 
-    // --- MÈTODES PER AL CONSULTOR (BÀSIC) ---
-
     public function index_basic()
     {
-        // Només ID, Nom i Cognoms per al Consultor
         $dades_professors = Professor::select('id', 'nombre', 'apellidos')->get();
         return view('llista-basica', compact('dades_professors'));
     }
@@ -104,7 +95,6 @@ class ControladorProfessor extends Controller
         return view('mostra-basica', compact('dades_professors'));
     }
 
-	/** PDF de una única entrada (Ficha individual) */
 	public function pdfDetall($id)
 	{
 	    $dades_professors = \App\Models\Professor::findOrFail($id);

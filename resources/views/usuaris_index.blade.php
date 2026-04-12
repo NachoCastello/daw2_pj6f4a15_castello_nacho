@@ -1,8 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Gestió d\'Usuaris') }}
-        </h2>
+        <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Gestió d\'Usuaris') }}
+            </h2>
+            <a href="{{ route('usuaris.create') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150" style="background-color: #2563eb; text-decoration: none;">
+                Afegeix Usuari
+            </a>
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -44,17 +49,19 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 text-center">
-                                    @if($usuari->id !== Auth::id())
-                                        <form action="{{ route('usuaris.destroy', $usuari->id) }}" method="POST" onsubmit="return confirm('Segur?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" style="background-color: #ef4444; color: white; padding: 6px 15px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer; border: none;">
-                                                ELIMINAR
-                                            </button>
-                                        </form>
-                                    @else
-                                        <span class="text-xs text-gray-400 italic">Ets tu</span>
-                                    @endif
+                                    <div class="flex justify-center space-x-2" style="display: flex; gap: 8px; justify-content: center;">
+                                        @if($usuari->id !== Auth::id())
+                                            <form action="{{ route('usuaris.destroy', $usuari->id) }}" method="POST" onsubmit="return confirm('Segur?')" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" style="background-color: #ef4444; color: white; padding: 6px 15px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer; border: none;">
+                                                    ELIMINAR
+                                                </button>
+                                            </form>
+                                        @else
+                                            <span class="text-xs text-gray-400 italic block mt-1" style="font-size: 12px;">Ets tu</span>
+                                        @endif
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

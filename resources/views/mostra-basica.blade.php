@@ -59,12 +59,6 @@
 		        TORNAR
 		    </a>
 
-            <a href="{{ route('profes.pdf.detall', $dades_professors->id) }}" 
-            class="btn btn-danger" 
-            style="font-weight: bold; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; background-color: #dc3545; color: white; border: none;">
-                GENERAR PDF DE LA FITXA
-            </a>
-
 		</div>
 
 </div>
